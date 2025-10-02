@@ -16,41 +16,101 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body class="bg-[#f4f5f7] min-h-screen px-4 py-8">
-    <div
-      class="border-b-1 border-gray-400 rounded-lg shadow-lg bg-white p-6 sm:p-8 md:p-10 flex justify-between items-center max-w-lg mx-auto"
-    >
-
-      <div class="flex items-center gap-4">
-        <div class="flex-shrink-0">
-          <img
-            src="./Photos/Group.png"
-            alt="Payoo Logo"
-            class="h-12 w-12 object-contain"
-          />
+  <body class="bg-[#f4f5f7] min-h-screen px-0 py-0">
+    <div class="bg-[#ffffff] mb-8 shadow-sm rounded-lg py-4">
+      <div
+        class="border-b-1 border-gray-400 rounded-lg shadow-lg bg-white p-6 sm:p-8 md:p-10 flex justify-between items-center max-w-lg mx-auto"
+      >
+        <div class="flex items-center gap-4">
+          <div class="flex-shrink-0">
+            <img
+              src="./Photos/Group.png"
+              alt="Payoo Logo"
+              class="h-12 w-12 object-contain"
+            />
+          </div>
+          <div class="">
+            <p class="text-2xl sm:text-3xl font-bold text-[#080808]">$45,000</p>
+            <p class="text-sm text-gray-600">Available Balance</p>
+          </div>
         </div>
-        <div class="">
-          <p class="text-2xl sm:text-3xl font-bold text-[#080808]">$45,000</p>
-          <p class="text-sm text-gray-600">Available Balance</p>
+
+        <div>
+          <button type="button" class="btn text-[#080808] gap-2">
+            <i class="fa-solid fa-arrow-right-from-bracket rotate-180"></i>
+            <span class="hidden sm:inline">Logout</span>
+          </button>
         </div>
       </div>
-
-
-      <div>
-        <button
-          type="button"
-          class="btn text-[#080808] gap-2 "
+      <div class="flex flex-col max-w-lg mx-auto mt-7 px-4 gap-4 mb-10">
+        <h1 class="text-[#080808] text-2xl font-bold">🔥 Welcome to Payooo!</h1>
+        <p class="text-[#08080880]">
+          Enjoy easy and convenient financial services with us. Cashout charge
+          is low and
+        </p>
+      </div>
+      <div class="mb-none">
+      <div
+        class="min-h-[200px] max-w-lg mx-auto grid grid-cols-3 max-w-lg mx-auto gap-4 p-4 mb-5"
+      >
+        <div
+          class="border-0.25 border-[#0808081a ] text-center p-5 rounded-lg flex flex-col gap-2 bg-[#ffffff] shadow-md"
         >
-          <i class="fa-solid fa-arrow-right-from-bracket rotate-180"></i>
-          <span class="hidden sm:inline">Logout</span>
-        </button>
+          <img class="mx-auto" src="./Photos/wallet1.png" alt="Add Money" />
+          <h1>Add Money</h1>
+        </div>
+        <div
+          class="border-0.25 border-[#0808081a ] text-center p-5 rounded-lg flex flex-col gap-2 bg-[#ffffff] shadow-md"
+        >
+          <img class="mx-auto" src="./Photos/send1.png" alt="Cashout" />
+          <h1>Cashout</h1>
+        </div>
+        <div
+          class="border-0.25 border-[#0808081a ] text-center py-5 rounded-lg flex flex-col gap-2 bg-[#ffffff] shadow-md"
+        >
+          <img class="mx-auto" src="./Photos/money1.png" alt="Transfer Money" />
+          <h1>Transfer Money</h1>
+        </div>
+        <div
+          class="border-0.25 border-[#0808081a ] text-center p-5 rounded-lg flex flex-col gap-2 bg-[#ffffff] shadow-md"
+        >
+          <img class="mx-auto" src="./Photos/bonus1.png" alt="Get Bonus" />
+          <h1>Get Bonus</h1>
+        </div>
+        <div
+          class="border-0.25 border-[#0808081a ] text-center p-5 rounded-lg flex flex-col gap-2 bg-[#ffffff] shadow-md"
+        >
+          <img class="mx-auto" src="./Photos/purse1.png" alt="Pay Bill" />
+          <h1>Pay Bill</h1>
+        </div>
+        <div
+          class="border-0.25 border-[#0808081a ] text-center p-5 rounded-lg flex flex-col gap-2 bg-[#ffffff] shadow-md"
+        >
+          <img
+            class="mx-auto"
+            src="./Photos/transaction1.png"
+            alt="Transaction"
+          />
+          <h1>Transaction</h1>
+        </div>
+      </div>
       </div>
     </div>
-            <div class="flex flex-col max-w-lg mx-auto mt-7 px-5 gap-4 mb-10">
-            <h1 class="text-[#080808] text-2xl font-bold">🔥 Welcome to Payooo!</h1>
-            <p class="text-[#08080880]">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
-        </div>
 
+    <!-- <div class="max-w-lg mx-auto flex flex-col p-4 gap-2 mb-10">
+          <div class="flex justify-between">
+            <h1 id="details" class="text-[#080808e6] font-bold text-lg">Latest Payment</h1>
+            <p id="details-bar" class="text-[#08080880]">View All</p>
+          </div>
+        </div> -->
 
+    <div class="max-w-lg mx-auto flex flex-col p-4 gap-2 mb-4">
+      <div>
+        <h1 class="text-[#080808e6] font-bold text-lg">Add Money</h1>
+      </div>
+      <div>
+
+      </div>
+    </div>
   </body>
 </html>
