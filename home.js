@@ -240,3 +240,4 @@ payBillButton.addEventListener("click", function (event) {
   //display
   balance.innerText = availableBalance;
 });
+//start tranjaction part
