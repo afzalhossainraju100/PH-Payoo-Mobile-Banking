@@ -30,13 +30,13 @@
             />
           </div>
           <div class="">
-            <p class="text-2xl sm:text-3xl font-bold text-[#080808]">$45,000</p>
+            <p class="text-2xl sm:text-3xl font-bold text-[#080808]">$ <span id="balance">45000</span></p>
             <p class="text-sm text-gray-600">Available Balance</p>
           </div>
         </div>
 
         <div>
-          <button type="button" class="btn text-[#080808] gap-2">
+          <button type="button" id="logout-button" class="btn text-[#080808] gap-2">
             <i class="fa-solid fa-arrow-right-from-bracket rotate-180"></i>
             <span class="hidden sm:inline">Logout</span>
           </button>
@@ -50,50 +50,54 @@
         </p>
       </div>
       <div class="mb-none">
-      <div
-        class="min-h-[200px] max-w-lg mx-auto grid grid-cols-3 max-w-lg mx-auto gap-4 p-4 mb-5"
-      >
         <div
-          class="border-0.25 border-[#0808081a ] text-center p-5 rounded-lg flex flex-col gap-2 bg-[#ffffff] shadow-md"
+          class="min-h-[200px] max-w-lg mx-auto grid grid-cols-3 max-w-lg mx-auto gap-4 p-4 mb-5"
         >
-          <img class="mx-auto" src="./Photos/wallet1.png" alt="Add Money" />
-          <h1>Add Money</h1>
+          <div id="add-money"
+            class="border-0.25 border-[#0808081a ] text-center p-5 rounded-lg flex flex-col gap-2 bg-[#ffffff] shadow-md"
+          >
+            <img class="mx-auto" src="./Photos/wallet1.png" alt="Add Money" />
+            <h1>Add Money</h1>
+          </div>
+          <div id="cashout"
+            class="border-0.25 border-[#0808081a ] text-center p-5 rounded-lg flex flex-col gap-2 bg-[#ffffff] shadow-md"
+          >
+            <img class="mx-auto" src="./Photos/send1.png" alt="Cashout" />
+            <h1>Cashout</h1>
+          </div>
+          <div id="Transfer-Money"
+            class="border-0.25 border-[#0808081a ] text-center py-5 rounded-lg flex flex-col gap-2 bg-[#ffffff] shadow-md"
+          >
+            <img
+              class="mx-auto"
+              src="./Photos/money1.png"
+              alt="Transfer Money"
+            />
+            <h1>Transfer Money</h1>
+          </div>
+          <div id="get-bonus"
+            class="border-0.25 border-[#0808081a ] text-center p-5 rounded-lg flex flex-col gap-2 bg-[#ffffff] shadow-md"
+          >
+            <img class="mx-auto" src="./Photos/bonus1.png" alt="Get Bonus" />
+            <h1>Get Bonus</h1>
+          </div>
+          <div id="pay-bill"
+            class="border-0.25 border-[#0808081a ] text-center p-5 rounded-lg flex flex-col gap-2 bg-[#ffffff] shadow-md"
+          >
+            <img class="mx-auto" src="./Photos/purse1.png" alt="Pay Bill" />
+            <h1>Pay Bill</h1>
+          </div>
+          <div id="transaction"
+            class="border-0.25 border-[#0808081a ] text-center p-5 rounded-lg flex flex-col gap-2 bg-[#ffffff] shadow-md"
+          >
+            <img
+              class="mx-auto"
+              src="./Photos/transaction1.png"
+              alt="Transaction"
+            />
+            <h1>Transaction</h1>
+          </div>
         </div>
-        <div
-          class="border-0.25 border-[#0808081a ] text-center p-5 rounded-lg flex flex-col gap-2 bg-[#ffffff] shadow-md"
-        >
-          <img class="mx-auto" src="./Photos/send1.png" alt="Cashout" />
-          <h1>Cashout</h1>
-        </div>
-        <div
-          class="border-0.25 border-[#0808081a ] text-center py-5 rounded-lg flex flex-col gap-2 bg-[#ffffff] shadow-md"
-        >
-          <img class="mx-auto" src="./Photos/money1.png" alt="Transfer Money" />
-          <h1>Transfer Money</h1>
-        </div>
-        <div
-          class="border-0.25 border-[#0808081a ] text-center p-5 rounded-lg flex flex-col gap-2 bg-[#ffffff] shadow-md"
-        >
-          <img class="mx-auto" src="./Photos/bonus1.png" alt="Get Bonus" />
-          <h1>Get Bonus</h1>
-        </div>
-        <div
-          class="border-0.25 border-[#0808081a ] text-center p-5 rounded-lg flex flex-col gap-2 bg-[#ffffff] shadow-md"
-        >
-          <img class="mx-auto" src="./Photos/purse1.png" alt="Pay Bill" />
-          <h1>Pay Bill</h1>
-        </div>
-        <div
-          class="border-0.25 border-[#0808081a ] text-center p-5 rounded-lg flex flex-col gap-2 bg-[#ffffff] shadow-md"
-        >
-          <img
-            class="mx-auto"
-            src="./Photos/transaction1.png"
-            alt="Transaction"
-          />
-          <h1>Transaction</h1>
-        </div>
-      </div>
       </div>
     </div>
 
@@ -104,13 +108,44 @@
           </div>
         </div> -->
 
-    <div class="max-w-lg mx-auto flex flex-col p-4 gap-2 mb-4">
+    <div id="add-money-form" class="max-w-lg mx-auto flex flex-col p-4 gap-2 mb-4 hidden">
       <div>
         <h1 class="text-[#080808e6] font-bold text-lg">Add Money</h1>
-      </div>
-      <div>
-
+        <form class="p-4 rounded-lg shadow-lg bg-[#ffffff] opacity-100 mt-5 mb-10" action="">
+          <div class="space-y-4">
+          <div>
+            <label for="select-bank">Select A Bank</label> <br>
+            <select id="select-bank" class="select select-ghost w-full rounded-2xl bg-[#f4f5f7] text-black" required>
+              <option disabled selected>Pick a Bank</option>
+              <option>AB Bank</option>
+              <option>IFIC Bank</option>
+              <option>Dutch Bangla Bank</option>
+            </select>
+          </div>
+          <div>
+            <label for="bank-account-number">Bank Account Number</label> <br>
+            <input id="bank-account-number" type="number" placeholder="Enter 11 digit account number" class="input number w-full rounded-2xl bg-[#f4f5f7] text-black border-none" required/>
+          </div>
+          <div>
+            <label for="amount-to-add">Amount to Add</label> <br>
+            <input id="amount-to-add" type="number" placeholder="Enter Amount" class="input number w-full rounded-2xl bg-[#f4f5f7] text-black border-none" required/>
+          </div>
+          <div>
+            <label for="pin-to-add-money">Enter PIN</label> <br>
+            <input id="pin-to-add-money" type="password" placeholder="Enter 4 digit pin number" class="input password w-full rounded-2xl bg-[#f4f5f7] text-black border-none" required/> <br> <br>
+          </div>
+          <button id="add-money-button"
+            type="submit"
+            class="btn w-full rounded-2xl bg-[#0874f2] text-white border-none"
+          >
+            Add Money
+          </button>
+         </div>
+        </form>
       </div>
     </div>
+
+
+    <script src="home.js"></script>
   </body>
 </html>
