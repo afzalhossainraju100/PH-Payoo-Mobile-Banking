@@ -247,7 +247,7 @@
 
     <div
       id="transfer-money-form"
-      class="max-w-lg mx-auto flex flex-col p-4 gap-2 mb-4"
+      class="max-w-lg mx-auto flex flex-col p-4 gap-2 mb-4 hidden"
     >
       <div>
         <h1 class="text-[#080808e6] font-bold text-lg">Transfer Money</h1>
@@ -295,6 +295,110 @@
               class="btn w-full rounded-2xl bg-[#0874f2] text-white border-none"
             >
               Send Money
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- get bounus coupon -->
+    <div
+      id="get-bonus-form"
+      class="max-w-lg mx-auto flex flex-col p-4 gap-2 mb-4 hidden"
+    >
+      <div>
+        <h1 class="text-[#080808e6] font-bold text-lg">Get Bonus</h1>
+        <form
+          class="p-4 rounded-lg shadow-lg bg-[#ffffff] opacity-100 mt-5 mb-10"
+          action=""
+        >
+          <div class="space-y-4">
+            <div>
+              <label for="bonus-coupon">Enter Bonus Coupon</label>
+              <br />
+              <input
+                id="bonus-coupon"
+                type="text"
+                placeholder="Enter your coupon"
+                class="input text w-full rounded-2xl bg-[#f4f5f7] text-black border-none"
+                required
+              />
+            </div>
+            <br />
+            <button
+              id="get-bonus-button"
+              type="submit"
+              class="btn w-full rounded-2xl bg-[#0874f2] text-white border-none"
+            >
+              Get Bonus
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- pay bill form -->
+    <div
+      id="pay-bill-form"
+      class="max-w-lg mx-auto flex flex-col p-4 gap-2 mb-4 hidden"
+    >
+      <div>
+        <h1 class="text-[#080808e6] font-bold text-lg">Pay Bill</h1>
+        <form
+          class="p-4 rounded-lg shadow-lg bg-[#ffffff] opacity-100 mt-5 mb-10"
+          action=""
+        >
+          <div class="space-y-4">
+            <div>
+              <label for="select-bank-to-pay">Select to Pay</label> <br />
+              <select
+                id="select-bank-to-pay"
+                class="select select-ghost w-full rounded-2xl bg-[#f4f5f7] text-black"
+                required
+              >
+                <option disabled selected>Select bank</option>
+                <option>AB Bank</option>
+                <option>IFIC Bank</option>
+                <option>Dutch Bangla Bank</option>
+              </select>
+            </div>
+            <div>
+              <label for="biller-account-number">Biller Account Number</label>
+              <br />
+              <input
+                id="biller-account-number"
+                type="number"
+                placeholder="Enter account number"
+                class="input number w-full rounded-2xl bg-[#f4f5f7] text-black border-none"
+                required
+              />
+            </div>
+            <div>
+              <label for="amount-to-pay">Amount to Pay</label> <br />
+              <input
+                id="amount-to-pay"
+                type="number"
+                placeholder="Enter Amount to pay"
+                class="input number w-full rounded-2xl bg-[#f4f5f7] text-black border-none"
+                required
+              />
+            </div>
+            <div>
+              <label for="pin-to-pay">PIN Number</label> <br />
+              <input
+                id="pin-to-pay"
+                type="password"
+                placeholder="Enter 4 digit pin number"
+                class="input password w-full rounded-2xl bg-[#f4f5f7] text-black border-none"
+                required
+              />
+              <br />
+              <br />
+            </div>
+            <button
+              id="pay-bill-button"
+              type="submit"
+              class="btn w-full rounded-2xl bg-[#0874f2] text-white border-none"
+            >
+              Pay Now
             </button>
           </div>
         </form>
