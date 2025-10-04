@@ -5,12 +5,15 @@ const transferMoney = document.getElementById("Transfer-Money");
 const getBonus = document.getElementById("get-bonus");
 const payBill = document.getElementById("pay-bill");
 const transaction = document.getElementById("transaction");
+//for transaction data
+const transactionData = [];
 //grab form id
 const addMoneyForm = document.getElementById("add-money-form");
 const cashoutForm = document.getElementById("cashout-form");
 const transferMoneyForm = document.getElementById("transfer-money-form");
 const getBonusForm = document.getElementById("get-bonus-form");
 const payBillForm = document.getElementById("pay-bill-form");
+const transactionForm = document.getElementById("transaction-form");
 //All forms button for take the value of the the form
 const addMoneyButton = document.getElementById("add-money-button");
 const cashoutMoneyButton = document.getElementById("cashout-money-button");
@@ -73,6 +76,12 @@ addMoneyButton.addEventListener("click", function (event) {
   availableBalance = parseInt(balance.innerText) + amountToAddValue;
   //display
   balance.innerText = availableBalance;
+
+    const data = {
+      name: "Add Money",
+      date: new Date().toLocaleTimeString(),
+    };
+    transactionData.push(data);
 });
 
 //cashOut money event work
@@ -117,6 +126,12 @@ cashoutMoneyButton.addEventListener("click", function (event) {
   availableBalance = currentBalance - amountToCashoutValue;
   //display
   balance.innerText = availableBalance;
+
+  const data = {
+    name: "Cash Out",
+    date: new Date().toLocaleTimeString()
+  }
+  transactionData.push(data);
 });
 
 //transfer money event work
@@ -161,6 +176,12 @@ transferMoneyButton.addEventListener("click", function (event) {
   availableBalance = currentBalance - amountToTransferValue;
   //display
   balance.innerText = availableBalance;
+
+    const data = {
+      name: "Transfer Money",
+      date: new Date().toLocaleTimeString(),
+    };
+    transactionData.push(data);
 });
 
 //for Get Bonus coupon
@@ -194,6 +215,12 @@ getBonusButton.addEventListener("click", function (event) {
   availableBalance = parseInt(balance.innerText) + couponValue;
   //display
   balance.innerText = availableBalance;
+
+    const data = {
+      name: "Get Bonus",
+      date: new Date().toLocaleTimeString(),
+    };
+    transactionData.push(data);
 });
 
 //pay bill event work
@@ -239,5 +266,21 @@ payBillButton.addEventListener("click", function (event) {
   availableBalance = currentBalance - amountToPayValue;
   //display
   balance.innerText = availableBalance;
+
+    const data = {
+      name: "Pay Bill",
+      date: new Date().toLocaleTimeString(),
+    };
+    transactionData.push(data);
 });
-//start tranjaction part
+//start transaction part
+transaction.addEventListener("click", function () {
+  addMoneyForm.style.display = "none";
+  cashoutForm.style.display = "none";
+  transferMoneyForm.style.display = "none";
+  getBonusForm.style.display = "none";
+  payBillForm.style.display = "none";
+  transactionForm.style.display = "block";
+
+  console.log(transactionData);
+});
