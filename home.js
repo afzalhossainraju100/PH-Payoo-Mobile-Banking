@@ -7,6 +7,9 @@ const payBill = document.getElementById("pay-bill");
 const transaction = document.getElementById("transaction");
 //for transaction data
 const transactionData = [];
+const transactionName = document.getElementById("transaction-name");
+const transactionDate = document.getElementById("transaction-date");
+const transactionContainer = document.getElementById("transaction-container");
 //grab form id
 const addMoneyForm = document.getElementById("add-money-form");
 const cashoutForm = document.getElementById("cashout-form");
@@ -45,6 +48,7 @@ addMoney.addEventListener("click", function () {
   transferMoneyForm.style.display = "none";
   getBonusForm.style.display = "none";
   payBillForm.style.display = "none";
+  transactionForm.style.display = "none";
 });
 
 addMoneyButton.addEventListener("click", function (event) {
@@ -77,11 +81,11 @@ addMoneyButton.addEventListener("click", function (event) {
   //display
   balance.innerText = availableBalance;
 
-    const data = {
-      name: "Add Money",
-      date: new Date().toLocaleTimeString(),
-    };
-    transactionData.push(data);
+  const data = {
+    name: "Add Money",
+    date: new Date().toLocaleTimeString(),
+  };
+  transactionData.push(data);
 });
 
 //cashOut money event work
@@ -92,6 +96,7 @@ cashout.addEventListener("click", function () {
   transferMoneyForm.style.display = "none";
   getBonusForm.style.display = "none";
   payBillForm.style.display = "none";
+  transactionForm.style.display = "none";
 });
 
 cashoutMoneyButton.addEventListener("click", function (event) {
@@ -129,8 +134,8 @@ cashoutMoneyButton.addEventListener("click", function (event) {
 
   const data = {
     name: "Cash Out",
-    date: new Date().toLocaleTimeString()
-  }
+    date: new Date().toLocaleTimeString(),
+  };
   transactionData.push(data);
 });
 
@@ -142,6 +147,7 @@ transferMoney.addEventListener("click", function () {
   transferMoneyForm.style.display = "block";
   getBonusForm.style.display = "none";
   payBillForm.style.display = "none";
+  transactionForm.style.display = "none";
 });
 
 transferMoneyButton.addEventListener("click", function (event) {
@@ -177,11 +183,11 @@ transferMoneyButton.addEventListener("click", function (event) {
   //display
   balance.innerText = availableBalance;
 
-    const data = {
-      name: "Transfer Money",
-      date: new Date().toLocaleTimeString(),
-    };
-    transactionData.push(data);
+  const data = {
+    name: "Transfer Money",
+    date: new Date().toLocaleTimeString(),
+  };
+  transactionData.push(data);
 });
 
 //for Get Bonus coupon
@@ -192,6 +198,7 @@ getBonus.addEventListener("click", function () {
   transferMoneyForm.style.display = "none";
   getBonusForm.style.display = "block";
   payBillForm.style.display = "none";
+    transactionForm.style.display = "none";
 });
 
 getBonusButton.addEventListener("click", function (event) {
@@ -216,11 +223,11 @@ getBonusButton.addEventListener("click", function (event) {
   //display
   balance.innerText = availableBalance;
 
-    const data = {
-      name: "Get Bonus",
-      date: new Date().toLocaleTimeString(),
-    };
-    transactionData.push(data);
+  const data = {
+    name: "Get Bonus",
+    date: new Date().toLocaleTimeString(),
+  };
+  transactionData.push(data);
 });
 
 //pay bill event work
@@ -230,6 +237,7 @@ payBill.addEventListener("click", function () {
   transferMoneyForm.style.display = "none";
   getBonusForm.style.display = "none";
   payBillForm.style.display = "block";
+    transactionForm.style.display = "none";
 });
 
 payBillButton.addEventListener("click", function (event) {
@@ -267,11 +275,11 @@ payBillButton.addEventListener("click", function (event) {
   //display
   balance.innerText = availableBalance;
 
-    const data = {
-      name: "Pay Bill",
-      date: new Date().toLocaleTimeString(),
-    };
-    transactionData.push(data);
+  const data = {
+    name: "Pay Bill",
+    date: new Date().toLocaleTimeString(),
+  };
+  transactionData.push(data);
 });
 //start transaction part
 transaction.addEventListener("click", function () {
@@ -283,4 +291,50 @@ transaction.addEventListener("click", function () {
   transactionForm.style.display = "block";
 
   console.log(transactionData);
+  transactionContainer.innerHTML = "";
+  if (transactionData.length > 0) {
+    for (const data of transactionData) {
+      const div = document.createElement("div");
+      div.innerHTML = `
+            <div class="flex justify-between items-center mb-4 border-1 border-[#0808081a] p-2 rounded-lg bg-[#ffffff]">
+            <div class="flex gap-4 items-center">
+            <div class="rounded-full p-2 bg-[#0808080d]">
+              <img class="mx-auto" src="./Photos/wallet1.png" alt="Add Money">
+            </div>
+            <div>
+              <h1 id="transaction-name" class="text-[#080808b3] font-bold">${data.name}</h1>
+              <p id="transaction-date" class="text-[#080808b3] text-xs font-normal">${data.date}</p>
+            </div>
+            </div>
+            <div class="p-2 text-[#08080880]">
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+            </div>
+      `;
+      transactionContainer.appendChild(div);
+      //show last transaction
+      // transactionName.innerText = data.name;
+      // transactionDate.innerText = data.date;
+    }
+  } else {
+      const div = document.createElement("div");
+      div.innerHTML = `
+            <div class="flex justify-between items-center mb-4 border-1 border-[#0808081a] p-2 rounded-lg bg-[#ffffff]">
+            <div class="flex gap-4 items-center">
+            <div class="rounded-full p-2 bg-[#0808080d]">
+              <img class="mx-auto" src="./Photos/wallet1.png" alt="Add Money">
+            </div>
+            <div>
+              <h1 id="transaction-name" class="text-[#080808b3] font-bold">No Transaction Yet</h1>
+              <p id="transaction-date" class="text-[#080808b3] text-xs font-normal"></p>
+            </div>
+            </div>
+            <div class="p-2 text-[#08080880]">
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+            </div>
+      `;
+      transactionContainer.appendChild(div);
+  }
 });
+
